@@ -50,3 +50,5 @@ group[].nodes[].index int
 # The system will migrate all data away from retired nodes such that they can
 # eventually be removed without partial data loss
 group[].nodes[].retired bool default=false
+## TODO
+node_relative_index_scoring bool default=false

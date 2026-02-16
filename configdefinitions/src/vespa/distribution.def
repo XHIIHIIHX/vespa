@@ -44,3 +44,5 @@ cluster{}.group[].nodes[].index int
 
 # Whether this node is retired, and data should migrate out of it.
 cluster{}.group[].nodes[].retired bool default=false
+
+cluster{}.node_relative_index_scoring bool default=false
