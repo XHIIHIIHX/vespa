@@ -11,6 +11,8 @@ if [[ -n "${DEBUG:-}" ]]; then
     set -o xtrace
 fi
 
+: "${VESPA_BUILDOS_LABEL:?Environment variable VESPA_BUILDOS_LABEL must be set (build OS label)}"
+
 if ! docker ps &> /dev/null; then
     echo "No working docker command found."
     exit 1

@@ -26,14 +26,8 @@ else
     CPP_TEST_TOKEN=$UNIT_TEST_CPP_ARM64_TOKEN
 fi
 
-if [[ -z $JAVA_TEST_TOKEN ]]; then
-    echo "Missing JAVA_TEST_TOKEN. Exiting."
-    exit 1
-fi
-if [[ -z $CPP_TEST_TOKEN ]]; then
-    echo "Missing CPP_TEST_TOKEN. Exiting."
-    exit 1
-fi
+: "${JAVA_TEST_TOKEN:?Environment variable JAVA_TEST_TOKEN must be set (token for uploading Java test results)}"
+: "${CPP_TEST_TOKEN:?Environment variable CPP_TEST_TOKEN must be set (token for uploading C++ test results)}"
 
 upload_result() {
     curl \
